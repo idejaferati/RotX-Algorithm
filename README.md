@@ -1,6 +1,6 @@
 # DataSecurity
 
-###RotX Algorithm
+#RotX Algorithm
 This project implements the ROTX algorithm through C# language program.
 
 RotX is a letter substitution algorithm, which replaces a letter with the X-th letter after it in the alphabet. 
