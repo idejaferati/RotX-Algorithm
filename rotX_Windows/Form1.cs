@@ -61,6 +61,49 @@ namespace rotX_Windows
 
         private static char[] alfabeti = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
 
+public class rotX
+        {
+
+            public static string Encrypt(int key, string plaintext)
+            {
+
+                StringBuilder encryption = new StringBuilder(); //encrypted plaintext
+                char[] plaintextArray = plaintext.ToCharArray(); //saved the plaintext characters in this vector
+                char keyedLetter = ' '; //the letter is saved after the shift is done
+
+                for (int i = 0; i < plaintextArray.Length; i++)
+                {
+
+                    //we check if there are spaces inside the plaintext, 
+                    //if yes, the same spaces are also forwarded to the ciphertext
+                    if (plaintextArray[i].Equals(' '))
+                    {
+                        encryption.Append(plaintextArray[i]);
+                        continue;
+                    }
+
+                    for (int j = 0; j < alfabeti.Length; j++)
+                    {
+
+                        //check if plaintext letters are found in the alphabet
+                        if (plaintextArray[i].Equals(alfabeti[j]))   
+                        {
+
+                            // takes the letter in the alphabet string which is equal to the current letter in the plaintext string
+                            // adds the value of the key to the current index value of the alphabet string
+                            // %26 in it to make sure it is always in the alphabet and does not go out of bounds
+                            keyedLetter = alfabeti[(j + key) % 26];
+                            encryption.Append(keyedLetter);
+
+                        }
+
+                    }
+
+                }
+
+                return encryption.ToString();
+            }
         
+        }
     }
 }
