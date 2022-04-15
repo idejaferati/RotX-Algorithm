@@ -103,7 +103,62 @@ public class rotX
 
                 return encryption.ToString();
             }
-        
+            
+             public static string Decrypt(int key, string ciphertext)
+            {
+                StringBuilder decryption = new StringBuilder();
+                char[] ciphertextArray = ciphertext.ToCharArray();  // in this vector we save characters of the ciphertext
+                char keyedLetter = ' ';// here are saved the letters of shifting
+                int letter = 0; // the new letter we get
+
+                for (int i = 0; i < ciphertextArray.Length; i++)
+                {
+
+
+                    if (ciphertextArray[i].Equals(' '))
+                    {
+                        decryption.Append(ciphertextArray[i]);
+
+                        continue;
+                    }
+
+                    for (int j = 0; j < alfabeti.Length; j++)
+                    {
+
+                        if (ciphertextArray[i].Equals(alfabeti[j]))
+                        {
+                            letter = (j - key) % 26;
+
+                            //while the modulus of a negative number is a negative number,
+                            //adding 26 to the negative number has the same result as getting a positive number
+                            if (letter < 0)
+                            {
+                                letter += 26;
+                            }
+
+                            keyedLetter = alfabeti[letter];
+                            decryption.Append(keyedLetter);
+
+                        }
+
+                    }
+
+                }
+
+                return decryption.ToString();
+            }
+
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }
