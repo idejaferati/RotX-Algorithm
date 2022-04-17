@@ -2,7 +2,7 @@
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30717.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rotX_Windows", "rotX_Windows\rotX_Windows.csproj", "{DA0C9C51-400F-4688-9051-AC7242EDC625}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "rotX", "rotX\rotX.csproj", "{DA0C9C51-400F-4688-9051-AC7242EDC625}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
