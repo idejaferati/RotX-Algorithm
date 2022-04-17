@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace rotX_Windows
+namespace rotX
 {
     static class Program
     {
